@@ -15,6 +15,7 @@ scripts-reload() {
 
 scripts-reconfigure() {
     "$SCRIPT_DIR_PATH/install.sh"
+    scripts-reload
 }
 
 scripts-upgrade() {
