@@ -50,6 +50,8 @@ echo "# were set by the user at install time." >> user_config.sh
 echo "#" >> user_config.sh
 echo "" >> user_config.sh
 
+chmod 600 user_config.sh
+
 
 read_variable PROJECTS_FOLDER "your projects root folder"
 
@@ -62,10 +64,10 @@ script_dir_path=$(dirname $(readlink -f $0))
 if [[ $SCRIPT_DIR_PATH ]]
 then
     echo ""
-	echo ".bashrc is already configured."
+    echo ".bashrc is already configured."
 else
-	echo "" >> ~/.bashrc
-	echo "# Scripts config" >> ~/.bashrc
+    echo "" >> ~/.bashrc
+    echo "# Scripts config" >> ~/.bashrc
     echo "export SCRIPT_DIR_PATH=$script_dir_path" >> ~/.bashrc
-	echo "source \$SCRIPT_DIR_PATH/main.sh" >> ~/.bashrc
+    echo "source \$SCRIPT_DIR_PATH/main.sh" >> ~/.bashrc
 fi
