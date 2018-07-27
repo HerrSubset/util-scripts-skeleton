@@ -18,9 +18,16 @@ binaries on your PATH.
 
 ## Getting started
 
-Commands are added by creating new files and loading them
-from `main.sh`. For example, you create a file `foobar.sh`
-with the following content:
+There are two ways to add commands that users can execute.
+The first is by creating scripts in the /bin folder of
+the project. `scripts-reconfigure` and `scripts-reload`
+are examples of that. `main.sh` modifies the path so that
+all scripts in this folder are executable.
+
+The second way to add commands is by creating new files,
+adding functions to them and loading them from `main.sh`. 
+For example, you create a file `foobar.sh` with the 
+following content:
 
 ```bash
 foobar() {

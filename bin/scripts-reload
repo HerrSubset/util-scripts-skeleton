@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# Re-load the functions into the current bash session. 
+# Scripts don't have to be reloaded, when executing them,
+# the latest version is always retrieved via the PATH.
+
+source "$SCRIPT_DIR_PATH/main.sh"
