@@ -8,4 +8,5 @@
 export PATH="$PATH:$SCRIPT_DIR_PATH/bin"
 
 source "$SCRIPT_DIR_PATH/user_config.sh"
+source "$SCRIPT_DIR_PATH/script_utils.sh"
 source "$SCRIPT_DIR_PATH/navigation.sh"

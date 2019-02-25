@@ -50,7 +50,12 @@ echo "# were set by the user at install time." >> user_config.sh
 echo "#" >> user_config.sh
 echo "" >> user_config.sh
 
+# Make user_config.sh only readable for the user
+# since it might contain passwords etc.
 chmod 600 user_config.sh
+
+# Create a folder for the scripts
+mkdir bin
 
 
 read_variable PROJECTS_FOLDER "your projects root folder"

@@ -73,9 +73,9 @@ the box.
  * `scripts-reconfigure` will re-run the installation,
    allowing you to modify the variables you've set.
 
- * `scripts-upgrade` is still unimplemented. In the future
-   it should allow you to upgrade all your scripts when
-   other users have pushed changes to your git remote.
+ * `scripts-upgrade` upgrades all your scripts by pulling
+   new changes from the git remote and running 
+   scripts-reconfigure.
 
  * `p` is a simple example script that was added to the
    skeleton. The installation will prompt you for the

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#
-# Show all configured variables to the user, and allow the 
-# user to change their values. This is essentially the same
-# as re-running the configuration script.
-
-"$SCRIPT_DIR_PATH/install.sh"
-scripts-reload
