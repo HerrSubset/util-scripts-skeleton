@@ -5,6 +5,15 @@
 # Generate user_config.sh and set up .bashrc so that it
 # sources main.sh
 
+
+
+script_dir_path=$(dirname $(readlink -f $0))
+cd "$script_dir_path"
+
+# Create a folder for the scripts
+mkdir bin
+
+
 ############################################################
 # Generate user_config.sh
 ############################################################
@@ -54,9 +63,6 @@ echo "" >> user_config.sh
 # since it might contain passwords etc.
 chmod 600 user_config.sh
 
-# Create a folder for the scripts
-mkdir bin
-
 
 read_variable PROJECTS_FOLDER "your projects root folder"
 
@@ -64,8 +70,6 @@ read_variable PROJECTS_FOLDER "your projects root folder"
 ############################################################
 # Modify .bashrc
 ############################################################
-script_dir_path=$(dirname $(readlink -f $0))
-
 if [[ $SCRIPT_DIR_PATH ]]
 then
     echo ""
