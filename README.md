@@ -1,33 +1,32 @@
 # Util Scripts Skeleton
 
 A fairly simple skeleton to add some scripts to. It can be
-used at work to easily share some bash scripts between you 
-and your colleagues.
+used to easily share some bash scripts between multiple
+people.
 
 
 ## How does it work?
 
 After running the `install.sh` script, your `.bashrc` will
-load the `main.sh` file. This file then further loads
-some other files and variables. In the files that are being
-loaded, you can declare variables and functions. Since they
-are loaded every time your shell starts, you will be able
-to use them from anywhere in your file system, just like
-binaries on your PATH.
+load the `main.sh` file. This file modifies your path to
+include the bin folder that's present in the project.
+
+Besides that, you can also make it load other shell files
+where you declare variables and/or functions that you want
+to load every time your shell opens.
 
 
 ## Getting started
 
 There are two ways to add commands that users can execute.
 The first is by creating scripts in the /bin folder of
-the project. `scripts-reconfigure` and `scripts-reload`
-are examples of that. `main.sh` modifies the path so that
-all scripts in this folder are executable.
+the project.  `main.sh` modifies the path so that all 
+scripts in this folder are executable.
 
-The second way to add commands is by creating new files,
-adding functions to them and loading them from `main.sh`. 
-For example, you create a file `foobar.sh` with the 
-following content:
+The second way to add commands is by creating new bash
+files, adding functions to them and loading them from 
+`main.sh`.  For example, you create a file `foobar.sh` 
+with the following content:
 
 ```bash
 foobar() {
@@ -43,10 +42,10 @@ line to `main.sh`:
     source "$SCRIPT_DIR_PATH/foobar.sh"
 ```
 
-`$SCRIPT_DIR_PATH` is a variable that set automatically
-when running `install.sh`. In case you want to define
-your own variables, that's possible too. Constants can be
-defined in any file loaded by `main.sh`.
+The `$SCRIPT_DIR_PATH` is set automatically when upon 
+`install.sh`. In case you want to define your own variables, 
+that's possible too. Constants can be defined in any file 
+loaded by `main.sh`.
 
 Variables that depend on the user can be set by 
 `install.sh`. This file provides the `read_variable`
