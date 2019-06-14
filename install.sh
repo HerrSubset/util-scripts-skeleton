@@ -11,7 +11,7 @@ script_dir_path=$(dirname $(readlink -f $0))
 cd "$script_dir_path"
 
 # Create a folder for the scripts
-mkdir bin
+mkdir -p bin
 
 
 ############################################################
@@ -50,6 +50,15 @@ read_variable() {
     	echo "export $varname=\"$INPUT\"" >> user_config.sh
     fi
 }
+
+
+# Just in case the user's config was not loaded, E.g. his/
+# her .bashrc got deleted, load the config directly from
+# user_config.sh so that it is not lost.
+if [[ -f user_config.sh ]]; then
+	source user_config.sh
+fi
+
 
 echo "#" > user_config.sh
 echo "# user_config.sh" >> user_config.sh
